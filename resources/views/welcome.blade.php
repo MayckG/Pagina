@@ -1,6 +1,9 @@
 <?php     
-    $_SESSION['login'] = true;
+    $_SESSION['login'] = TRUE;
     $_SESSION['permissao'] = 9;
+    $_SESSION['cnpj'] ="";
+    $_SESSION['razao_social']="";
+    $_SESSION['anp']="";
     $_SESSION['usuario']= "User";
     $_SESSION['requisicao']= "login";
 ?> 
@@ -10,7 +13,7 @@
 
 <!-- utilizando o página 'site' envia o valor que deverá ser substituído pela variável 
 'tituloPagina' nesse caso 'Contatos' -->
-@section('tituloPagina','Contatos')
+@section('tituloPagina','Bem-vindo')
 
 
 <!-- inicia a seção da variável 'conteudoPagina' que esta no arquivo 'site' e contempla 
@@ -19,11 +22,12 @@ toda a informação que será apresentada no BODY da página através da variáv
             
     <div id="usuario"> 
         <?php 
-            if(isset($_SESSION['login']))
+            if(isset($_SESSION['login'])){
                 if($_SESSION['permissao'] === 1)
-                    echo "<p>Bem vindo(a), <strong>". $_SESSION['usuario'] ."</strong> [CNPJ ". $_SESSION['cnpj'] ." - ". $_SESSION['razao_social'] ." - ANP ". $_SESSION['anp'] ."]</p>";
+                    echo "<p>Bem-vindo(a), <strong>". $_SESSION['usuario'] ."</strong> [CNPJ ". $_SESSION['cnpj'] ." - ". $_SESSION['razao_social'] ." - ANP ". $_SESSION['anp'] ."]</p>";
                 else
-                    echo "<p>Bem vindo(a), <strong>". $_SESSION['usuario'] ."</strong></p>";
+                    echo "<p>Bem-vindo(a), <strong>". $_SESSION['usuario'] ."</strong></p>";
+            }
         ?>
     </div>
     <div id="tela">

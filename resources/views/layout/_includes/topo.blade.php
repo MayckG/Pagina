@@ -1,12 +1,9 @@
-<?php     
-    $_SESSION['login'] = true;
-    $_SESSION['permissao'] = 9;
-
-?> 
-
 <html>
     <head>
         <title>@yield('tituloPagina')</title>
+        <link rel="stylesheet" href="<?php echo asset('css/estilo.css')?>" type="text/css">
+        <meta charset="utf-8"/>
+        <link rel="shortcut icon" href="{{{ asset('imagens/favicon.ico') }}}">
         <header>
             <div class="container">
                 <div id="logo">
